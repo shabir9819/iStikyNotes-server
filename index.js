@@ -18,7 +18,9 @@ connectToMongo();
 
 //Adding cors and using it
 var corsOptions = {
-    credentials: true };
+    credentials: true ,
+    "Content-Type":"application/json"
+};
 app.use(cors(corsOptions));
 
 // using 5500 port for express
