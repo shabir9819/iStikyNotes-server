@@ -18,7 +18,6 @@ connectToMongo();
 
 //Adding cors and using it
 var corsOptions = {
-    origin: ['http://localhost:5173/http','https://istickynotes-server.onrender.com'],
     credentials: true };
 app.use(cors(corsOptions));
 
