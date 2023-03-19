@@ -18,7 +18,7 @@ connectToMongo();
 
 //Adding cors and using it
 var corsOptions = {
-    origin: '*',
+    origin: ['http://localhost:5173/http','https://istickynotes-server.onrender.com'],
     credentials: true };
 app.use(cors(corsOptions));
 
@@ -26,7 +26,7 @@ app.use(cors(corsOptions));
 const port = process.env.PORT || process.env.SITE_PORT;
 
 //Using router for accesing
-app.get("*", async(req, res)=>{
+app.get("/", async(req, res)=>{
     res.send("Working...")
 })
 app.use("/api/auth",require("./routers/auths"));
