@@ -7,7 +7,7 @@ mongoose.set("strictQuery", true);
 //Using connectToMongo function to connect to the mongo database
 const connectToMongo = () => {
   mongoose
-    .connect(mongoDbUrl, { useNewUrlParser: true, useUnifiedTopology: true })
+    .connect(mongoDbUrl, { useNewUrlParser: true, useUnifiedTopology: true , useCreateIndex: true, useFindAndModify:false})
     .then(() => console.log(`Connected to the database server: ${mongoDbUrl}`))
     .catch(() => console.log("No connection"));
 };
