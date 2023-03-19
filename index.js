@@ -17,12 +17,18 @@ const connectToMongo = require("./db");
 connectToMongo();
 
 //Adding cors and using it
-app.use(cors());
+var corsOptions = {
+    origin: '*',
+    credentials: true };
+app.use(cors(corsOptions));
 
 // using 5500 port for express
 const port = process.env.PORT || process.env.SITE_PORT;
 
 //Using router for accesing
+app.get("*", async(req, res)=>{
+    res.send("Working...")
+})
 app.use("/api/auth",require("./routers/auths"));
 app.use("/api/notes",require("./routers/notes"));
 app.use("/api/message", require("./routers/messages"));
